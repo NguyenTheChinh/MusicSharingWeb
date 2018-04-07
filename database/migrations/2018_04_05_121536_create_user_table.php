@@ -18,10 +18,11 @@ class CreateUserTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('full_name');
-            $table->dateTime('birthday');
+            $table->date('birthday');
             $table->string('email');
             $table->string('phone');
-            $table->float('wallet');
+            $table->float('wallet')->default(0);
+            $table->rememberToken();
         });
     }
 
