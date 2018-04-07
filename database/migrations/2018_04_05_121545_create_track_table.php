@@ -20,6 +20,7 @@ class CreateTrackTable extends Migration
             $table->string('artist');
             $table->dateTime('date');
             $table->float('price');
+            $table->string('path');
             $table->integer('genre_id');
             $table->integer('user_id');
         });
