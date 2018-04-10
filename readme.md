@@ -53,9 +53,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 ## How to run this project
-Step 1: turn off apache2: sudo service apache2 stop
-Step 2: install dependencies if not install yet: sudo docker run --rm -v $(pwd):/app composer/composer install
-Step 3: sudo chmod 777 -R storage bootstrap/cache
-Step 4: sudo docker-compose up
-Open browser and go to http://localhost/ , phpmyadmin is available at: http://localhost:8080/
-To run php artisan migrate: docker-compose exec app php artisan migrate
+- Step 1: turn off apache2: sudo service apache2 stop
+- Step 2: install dependencies if not install yet: sudo docker run --rm -v $(pwd):/app composer/composer install
+- Step 3: sudo chmod 777 -R storage bootstrap/cache
+- Step 4: sudo docker-compose up
+- Open browser and go to http://localhost/ , phpmyadmin is available at: http://localhost:8080/
+- To run php artisan migrate: docker-compose exec app php artisan migrate
