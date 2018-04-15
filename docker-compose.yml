@@ -22,7 +22,7 @@ services:
     volumes_from:
       - app
     ports:
-      - 80:80
+      - "8181:80"
 
   # The Database
   database:
@@ -44,9 +44,9 @@ services:
       - "MYSQL_ROOT_PASSWORD=secret"
       - "PMA_HOST=database"
     links:
-      - database
+      - "database"
     ports:
-      - "8080:80"
+      - "9090:80"
 
 volumes:
   dbdata:

@@ -17,6 +17,8 @@ class CreatePlaylistTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('user_id');
+            $table->string('created_at');
+            $table->string('updated_at');
         });
     }
 

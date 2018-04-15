@@ -17,6 +17,8 @@ class CreateListTrackTable extends Migration
             $table->integer('playlist_id');
             $table->integer('playlist_user_id');
             $table->integer('track_id');
+            $table->string('updated_at');
+            $table->string('created_at');
         });
     }
 
