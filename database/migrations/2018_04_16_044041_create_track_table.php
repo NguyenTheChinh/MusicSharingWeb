@@ -23,7 +23,7 @@ class CreateTrackTable extends Migration
             $table->integer('fulltrack_time');
             $table->integer('genre_id');
             $table->integer('uploaded_by');
-            $table->integer('listen');
+            $table->integer('listen')->default(0);
         });
     }
 

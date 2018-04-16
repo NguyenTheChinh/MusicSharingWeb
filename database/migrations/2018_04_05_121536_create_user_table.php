@@ -21,7 +21,7 @@ class CreateUserTable extends Migration
             $table->date('birthday');
             $table->string('email');
             $table->string('phone');
-            $table->float('wallet')->default(1000000);
+            $table->float('wallet')->default(100000);
             $table->rememberToken();
             $table->integer('level');
         });
