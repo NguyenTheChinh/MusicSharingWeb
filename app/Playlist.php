@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Playlist extends Model
 {
     protected $table = "playlist";
+    protected $fillable = ['name', 'user_id'];
+    public $timestamps = false;
 
     public function ListTrack()
     {
@@ -15,7 +17,7 @@ class Playlist extends Model
 
     public function User()
     {
-        return $this->belongsTo('App\Users', 'user_id', 'id');
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
 }

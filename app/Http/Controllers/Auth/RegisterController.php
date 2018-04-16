@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Users;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,9 +48,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:user',
+            'email' => 'required|string|email|max:255|unique:user',
             'password' => 'required|string|min:6|confirmed',
+            'full_name' => 'required|string|max:255',
+            'birthday' => 'required|date|before:today',
+            'phone' => array('required','string','regex:/(09)[0-9]{8}|(01)[0-9]{9}/'),
         ]);
     }
 
@@ -58,14 +61,17 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Users
+     * @return \App\User
      */
     protected function create(array $data)
     {
-        return Users::create([
-            'name' => $data['name'],
+        return User::create([
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'full_name' => $data['full_name'],
+            'birthday' => $data['birthday'],
+            'phone' => $data['phone'],
         ]);
     }
 }
