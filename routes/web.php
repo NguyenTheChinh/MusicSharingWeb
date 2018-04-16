@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('musicworld','songInTrack@getIndex');
+Route::get('/musicworld','songInTrack@getIndex');
 Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
 Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
 Route::get('/uploadMusic',function(){

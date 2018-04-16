@@ -7,7 +7,10 @@ use app\Track;
 class songInTrack extends Controller
 {
     public function getIndex(){
-        $dataInTrack = \DB::table('track')->where('id','<',11)->get();;
+        $dataInTrack = \DB::table('track')
+            ->orderBy('listen', 'desc')
+            ->limit(10)
+            ->get();
         return view('musicWorld.index',['dataInTrack'=> $dataInTrack]);
     }
 }

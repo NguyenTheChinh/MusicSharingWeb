@@ -401,3 +401,23 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 }
 
 
+/*CSS for modal creat palylist*/
+
+.modal-body input{
+    margin-left: 42px;
+}
+::placeholder{
+    font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-style: italic;
+ }
+ 
+ ::-ms-input-placeholder { /* Microsoft Edge */
+    font-style: italic;
+ }
+
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/musicworld">HOME</a></li>
-                    <li><a href="">CREATE PLAYLIST</a></li>
+                    <li><a href="" data-toggle="modal" data-target="#myModalCreatePlaylist">CREATE PLAYLIST</a></li>
                     <li><a href="/uploadMusic">UPLOAD YOUR SONG</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                     <li class="dropdown">
