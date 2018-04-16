@@ -13,3 +13,6 @@
 
 Route::get('musicworld','songInTrack@getIndex');
 Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
+Route::get('musicworld/ratingDanceEDM/nameSong',function(){
+    return view('musicWorld.audio');
+});
