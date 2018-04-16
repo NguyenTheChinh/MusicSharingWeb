@@ -1,0 +1,58 @@
+.header a {
+    color: #636b6f;
+    padding: 0 25px;
+    margin: 5px 0 5px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    float: right;
+}
+
+table.table td a {
+    cursor: pointer;
+}
+
+table.table td a.edit {
+    color: #FFC107;
+}
+
+table.table td a.delete {
+    color: #E34724;
+}
+
+table.table td a.cancel {
+    color: #E34724;
+}
+
+table.table td a.save {
+    color: #34bf22;
+}
+
+table.table td .save {
+    display: none;
+}
+
+table.table td .cancel {
+    display: none;
+}
+
+.error {
+    border-color: #f50000;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination > li {
+    color: #636b6f;
+    padding: 0 15px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
