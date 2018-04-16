@@ -15,7 +15,7 @@
                     </div>
                     <div class="media-body">
                         <div>
-                            <p class="media-heading"><a href="/musicworld/ratingDanceEDM/nameSong">{{$rts->name}}</a></p>
+                            <p class="media-heading"><a href="/musicworld/listen/{{$rts->name}}-{{$rts->id}}">{{$rts->name}}</a></p>
                             <p>{{$rts->album}}</p>
                         </div>
                         <div>

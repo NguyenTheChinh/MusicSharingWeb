@@ -22,6 +22,7 @@ class CreateTrackTable extends Migration
             $table->float('price');
             $table->integer('genre_id');
             $table->integer('uploaded_by');
+            $table->integer('listen')->default(0);
         });
     }
 
