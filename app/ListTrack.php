@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ListTrack extends Model
 {
     protected $table = "list_track";
+    protected $fillable = ['playlist_id', 'playlist_user_id', 'track_id'];
+    public $timestamps = false;
 
     public function Track()
     {

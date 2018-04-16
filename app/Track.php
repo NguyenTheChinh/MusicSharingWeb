@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Track extends Model
 {
     protected $table = "track";
+    protected $fillable = ['name', 'album', 'artist', 'date', 'price', 'genre_id', 'uploaded_by'];
     public $timestamps = false;
 
     public function Genre()
@@ -26,7 +27,7 @@ class Track extends Model
 
     public function User()
     {
-        return $this->belongsTo('App\Users', 'user_id', 'id');
+        return $this->belongsTo('App\User', 'uploaded_by', 'id');
     }
 
 }

@@ -11,6 +11,6 @@ class TrackBought extends Model
         return $this->belongsTo('App\Track','track_id','id');
     }
     public function User(){
-        return $this->belongsTo('App\Users','user_id','id');
+        return $this->belongsTo('App\User','user_id','id');
     }
 }
