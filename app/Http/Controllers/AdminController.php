@@ -46,8 +46,9 @@ class AdminController extends Controller
 
     public function getPlaylistView()
     {
-        $lists = ListTrack::paginate(8);
-        return view('admin/playlist')->with('lists', $lists);
+        $lists = ListTrack::groupby('playlist_id')->paginate(8);
+        $listTrack = ListTrack::paginate(8);
+        return view('admin/playlist', ['lists' => $lists, 'listTracks' => $listTrack]);
     }
 
     public function updateUser(Request $request)

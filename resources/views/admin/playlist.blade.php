@@ -39,23 +39,15 @@
             <th>Playlist</th>
             <th>Username</th>
             <th>User's email</th>
-            {{--<th>Track Name</th>--}}
-            {{--<th>Album</th>--}}
-            {{--<th>Artist</th>--}}
-            {{--<th>Price</th>--}}
         </tr>
         </thead>
         <tbody>
         @foreach($lists as $list)
             <tr class=>
                 <td style="display: none;">{{$list->playlist->id}}</td>
-                <td>{{$list->playlist->name}}</td>
+                <td class ="" data-toggle="modal" data-target="#{{$list->playlist->name}}">{{$list->playlist->name}}</td>
                 <td>{{$list->playlist->user->username}}</td>
                 <td>{{$list->playlist->user->email}}</td>
-                {{--<td>{{$list->track->name}}</td>--}}
-                {{--<td>{{$list->track->album}}</td>--}}
-                {{--<td>{{$list->track->artist}}</td>--}}
-                {{--<td>{{$list->track->price}}</td>--}}
                 <td>
                     <a class="save" title="Save" data-toggle="tooltip"><i class="material-icons">&#xE876;</i></a>
                     <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -68,38 +60,46 @@
     </table>
     {!! $lists->links() !!}
 </div>
-{{--@foreach($lists as $list)--}}
-    {{--<div class="modal-content">--}}
-        {{--<div class="modal-header">--}}
-            {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-            {{--<h4 class="modal-title">Close</h4>--}}
-        {{--</div>--}}
-        {{--<div class="modal-body">--}}
-            {{--<div class="container">--}}
-                {{--<table class="table">--}}
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                        {{--<th>Track Name</th>--}}
-                        {{--<th>Album</th>--}}
-                        {{--<th>Artist</th>--}}
-                        {{--<th>Price</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
-                    {{--<tbody>--}}
-                    {{--<tr>--}}
-                        {{--<td>{{$list->track->name}}</td>--}}
-                        {{--<td>{{$list->track->album}}</td>--}}
-                        {{--<td>{{$list->track->artist}}</td>--}}
-                        {{--<td>{{$list->track->price}}</td>--}}
-                    {{--</tr>--}}
-                    {{--</tbody>--}}
-                {{--</table>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="modal-footer">--}}
-            {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--@endforeach--}}
+@foreach($lists as $list)
+    <div class="modal fade" id="{{$list->playlist->name}}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Track Name</th>
+                                <th>Album</th>
+                                <th>Artist</th>
+                                <th>Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($listTracks as $listTrack)
+                                @if ($listTrack->playlist->name == $list->playlist->name)
+                                    <tr>
+                                        <td>{{$listTrack->track->name}}</td>
+                                        <td>{{$listTrack->track->album}}</td>
+                                        <td>{{$listTrack->track->artist}}</td>
+                                        <td>{{$listTrack->track->price}}</td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endforeach
 </body>
 </html>
