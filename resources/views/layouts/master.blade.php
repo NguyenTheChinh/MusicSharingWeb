@@ -19,6 +19,7 @@
     @yield('content')
     @include('particals.googleMap')
     @include('particals.footer');
+    <script src="{{ URL::to('js/googleMap.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

@@ -56,40 +56,40 @@
     <p><em>We love music!</em></p>
     <div class="row">
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="">
+            <p class="text-center"><strong>Dance & EDM</strong></p><br>
+            <a href="/musicworld/ratingDanceEDM">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="">
+            <p class="text-center"><strong>House</strong></p><br>
+            <a href="/musicworld/ratingHouse">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="#demo3">
+            <p class="text-center"><strong>Dubstep</strong></p><br>
+            <a href="/musicworld/ratingDubstep">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="">
+            <p class="text-center"><strong>Trap</strong></p><br>
+            <a href="/musicworld/ratingTrap">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="">
+            <p class="text-center"><strong>Drum & Bass</strong></p><br>
+            <a href="/musicworld/ratingDrumBass">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
         <div class="col-sm-4">
-            <p class="text-center"><strong>Phạm Đức Tiến</strong></p><br>
-            <a href="#demo3">
+            <p class="text-center"><strong>Trance</strong></p><br>
+            <a href="/musicworld/ratingTrance">
                 <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
             </a>
         </div>
@@ -102,51 +102,25 @@
             <h3 class="text-center">THE HOT SONG</h3>
             <div class="listHotSong">
                 <ul class="list-group">
+                @foreach($dataInTrack as $dit)
                     <li class="list-group-item">
                         <div class="media">
                             <div class="media-left">
-                                <h4 class="text-center">1-ID</h4>
+                                <h4 class="text-center">{{$dit->id}}</h4>
                             </div>
                             <div class="media-body">
                                 <div>
-                                    <p class="media-heading"><a href="">Người âm phủ</a></p>
-                                    <p>Tên người up nhạc</p>
+                                    <p class="media-heading"><a href="">{{$dit->name}}</a></p>
+                                    <p>{{$dit->album}}</p>
                                 </div>
                                 <div>
-                                    <p>price : $500</p>
+                                    <p>price : {{$dit->price}}</p>
                                     <a href=""> <span><i class="fas fa-download"></i></span></a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">
-                        <div class="media">
-                            <div class="media-left">
-                                <h4 class="text-center">2-ID</h4>
-                            </div>
-                            <div class="media-body">
-                                <div>
-                                    <p class="media-heading"><a href="">Co chang trai viet len cay</a></p>
-                                    <p>Phan Manh Quynh</p>
-                                </div>
-                                <div>
-                                    <p>price : $500</p>
-                                    <a href=""> <span><i class="fas fa-download"></i></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="media">
-                            <div class="media-left">
-                                <h4 class="text-center">3-ID</h4>
-                            </div>
-                            <div class="media-body">
-                                <p class="media-heading"><a href="">Ngam hoa le roi</a></p>
-                                <p>Hoa Vinh</p>
-                            </div>
-                        </div>
-                    </li>
+                @endforeach
                 </ul>
             </div>
         </div>

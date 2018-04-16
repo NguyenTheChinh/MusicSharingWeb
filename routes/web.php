@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('musicWorld.index');
-});
+Route::get('musicworld','songInTrack@getIndex');
+Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');

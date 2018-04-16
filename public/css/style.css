@@ -18,9 +18,13 @@ h3, h4 {
     width: 80%;
     height: 80%;
     opacity: 0.7;
+    -webkit-transition: width 2s, height 2s; /* Safari */
+    transition: width 2s, height 2s;
 }
 .person:hover {
     border-color: #f1f1f1;
+    width: 300px;
+    height: 400px;
 }
 /*CSS for Music World slider*/
 .carousel-inner img {
@@ -65,6 +69,10 @@ h3, h4 {
 }
 .listHotSong .media-body div:nth-child(2) a{
     margin-left: 15px;
+}
+
+.listHotSong .list-group .list-group-item p{
+    font-style: italic;
 }
 /*CSS for google map*/
 #googleMap {
