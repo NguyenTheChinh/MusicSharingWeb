@@ -115,7 +115,7 @@
                                 </div>
                                 <div>
                                     <p>price : {{$dit->price}}</p>
-                                    <a href=""> <span><i class="fas fa-download"></i></span></a>
+                                    <a href="download/{{$dit->name}}-{{$dit->id}}"> <span><i class="fas fa-download"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -182,4 +182,5 @@
 
   </div>
 </div>
+
 @endsection

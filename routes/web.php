@@ -56,3 +56,7 @@ Route::put('admin/playlist', 'AdminController@updatePlaylist');
 Route::delete('admin/playlist', 'AdminController@deletePlaylist');
 
 Route::get('track_id/{track_id}/{time_played}/pay', 'PayController@pay')->name('pay');
+
+Route::get('search', function(){
+    return view('musicWorld.searchPage');
+});

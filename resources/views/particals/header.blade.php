@@ -37,7 +37,7 @@
                                 @endauth
                         @endif
                     </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li><a href="/search" data-toggle="collapse" data-target="#inputSearch"><span class="glyphicon glyphicon-search"></span></a></li>
                 </ul>
                 </div>
             </div>

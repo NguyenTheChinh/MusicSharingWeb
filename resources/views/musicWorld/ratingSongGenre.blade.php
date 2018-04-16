@@ -20,7 +20,7 @@
                         </div>
                         <div>
                             <p>price : {{$rts->price}}</p>
-                            <a href=""> <span><i class="fas fa-download"></i></span></a>
+                            <a href="/download/{{$rts->name}}-{{$rts->id}}"> <span><i class="fas fa-download"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -29,4 +29,8 @@
         </ul>
     </div>
     </div>
+    @endsection
+
+    @section('scripts')
+    <script src="{{ asset('js/googleMap.js') }}"></script>
     @endsection
