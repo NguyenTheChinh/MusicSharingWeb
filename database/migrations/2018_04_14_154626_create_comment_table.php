@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrackTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateTrackTable extends Migration
      */
     public function up()
     {
-        Schema::create('track', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('album');
-            $table->string('artist');
-            $table->dateTime('date');
-            $table->float('price');
-            $table->string('path');
-            $table->integer('genre_id');
+            $table->text('content');
+            $table->integer('track_id');
             $table->integer('user_id');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +29,6 @@ class CreateTrackTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('track');
+        Schema::dropIfExists('comment');
     }
 }
