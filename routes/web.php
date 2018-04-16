@@ -32,3 +32,5 @@ Route::delete('/playlist/{id}', 'PlaylistController@delete')->name('playlist');
 Route::post('list_track/{playlist_id}/track_id/{track_id}/', 'PlaylistController@insertTracktoList')->name('listtrack');
 
 Route::delete('list_track/{playlist_id}/track_id/{track_id}/delete', 'PlaylistController@deleteTrackfromList')->name('listtrack');
+
+Route::get('track_id/{track_id}/{time_played}/pay', 'PayController@pay')->name('pay');
