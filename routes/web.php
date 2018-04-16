@@ -11,24 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/welcome');
-});
-
 Auth::routes();
 
-Route::get('/musicworld','songInTrack@getIndex');
+Route::get('/','songInTrack@getIndex');
+
 Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
+
 Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
-Route::get('/uploadMusic',function(){
-    return view('musicWorld.uploadMusic');
-});
-
-Route::get('/home', 'HomeController@in
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/playlist', 'PlaylistController@get')->name('playlist');
 

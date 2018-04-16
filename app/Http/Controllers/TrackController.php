@@ -14,7 +14,7 @@ class TrackController extends Controller
     public function getUploadForm()
     {
         $genre = Genre::all();
-        return view('upload')->with("genre", $genre);
+        return view('musicWorld.uploadMusic')->with("genre", $genre);
     }
 
     public function uploadFile(Request $request)
