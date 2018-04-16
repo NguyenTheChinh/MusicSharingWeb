@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Track;
+use App\Track;
 use Illuminate\Http\Request;
 
 class listenAudio extends Controller
 {
     public function getIndex($nameSong, $idSong){
-        return view('musicWorld.audio',['nameSong'=>$nameSong,'idSong'=>$idSong]);
+        $track = Track::find($idSong);
+        $track->listen=$track->listen+1;
+        $track->save();
+        $genre=$track->genre_id;
+        $releatedSong = Track::where('genre_id', '=', $genre)->get();
+        return view('musicWorld.audio',['nameSong'=>$nameSong,'idSong'=>$idSong,'releatedSong'=>$releatedSong]);
     }
 }

@@ -4,14 +4,14 @@
 @endsection
     @section('content')
     <div class="container">
-    <h3 class="text-center">THE Rating Song</h3>
+    <h3 class="text-center">THE RATING SONG</h3>
     <div class="listHotSong">
         <ul class="list-group">
         @foreach($ratingSong as $rts)
             <li class="list-group-item">
                 <div class="media">
                     <div class="media-left">
-                        <h4 class="text-center">{{$rts->id}}</h4>
+                        <h4 class="text-center">{{$loop->iteration}}</h4>
                     </div>
                     <div class="media-body">
                         <div>

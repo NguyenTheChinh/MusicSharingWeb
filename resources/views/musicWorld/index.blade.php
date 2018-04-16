@@ -18,7 +18,7 @@
             <img src="./image/maxresdefault.jpg" alt="New York" width="1200" height="700">
             <div class="carousel-caption">
             <h3>Rappper</h3>
-            <p>Má mày tên là Ngọc , ông già mày tên là Tuấn Anh</p>
+            <p>I create the trend underground music</p>
             </div>      
         </div>
 
