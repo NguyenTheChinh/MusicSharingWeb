@@ -33,7 +33,7 @@ Route::get('upload', 'TrackController@getUploadForm')->middleware('auth');
 
 Route::post('upload', 'TrackController@uploadFile') -> name('upload');
 
-Route::get('download/{name}-{id}', 'TrackController@downloadFile');
+Route::get('download/{name}-{id}', 'TrackController@downloadFile')->middleware('auth');
 
 Route::get('admin', 'AdminController@getView');
 
