@@ -70,7 +70,7 @@
         <div class="col-sm-4">
             <p class="text-center"><strong>Dubstep</strong></p><br>
             <a href="/musicworld/ratingDubstep">
-                <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" width="255" height="255">
+                <img src="./image/image_teams/Tien_team.jpg" class="img-thumbnail person" alt="Random Name" style="width="255" height="255"">
             </a>
         </div>
     </div>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="media-body">
                                 <div>
-                                    <p class="media-heading"><a href="/musicworld/listen/{{$dit->name}}-{{$dit->id}}">{{$dit->name}}</a></p>
+                                    <p class="media-heading"><a href="/musicworld/listen/{{$dit->name}}-{{$dit->id}}.mp3">{{$dit->name}}</a></p>
                                     <p>{{$dit->album}}</p>
                                 </div>
                                 <div>
@@ -168,11 +168,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
+        
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title text-center">Create Your Playlist</h4>
       </div>
       <div class="modal-body">
-        <input type="text" placeholder="Enter new playlist" size="50">
+        <form method='POST' action="/playlist">
+        <input type="text" name = "name" placeholder="Enter new playlist" size="50">
+        </form>      
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-primary" data-dismiss="modal">create</button>

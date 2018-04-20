@@ -60,3 +60,5 @@ Route::get('track_id/{track_id}/{time_played}/pay', 'PayController@pay')->name('
 Route::get('search', function(){
     return view('musicWorld.searchPage');
 });
+
+Route::post('search', 'controllerSearch@search');

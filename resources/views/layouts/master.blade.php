@@ -19,7 +19,6 @@
     @yield('content')
     @include('particals.googleMap')
     @yield('scripts')
-    <script src="{{ asset('js/googleMap.js') }}"></script>
     @include('particals.footer');
 </body>
 </html>
