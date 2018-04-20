@@ -427,3 +427,39 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     margin-bottom: 70px;
     text-transform: uppercase;
 }
+
+/*CSS for search form*/
+
+/* Style the search field */
+ form.searchForm input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+form.searchForm button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+form.exampsearchFormle button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+form.searchForm::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

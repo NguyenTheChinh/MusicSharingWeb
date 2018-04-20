@@ -1,0 +1,14 @@
+ @if(Session::has('result'))
+    <tr>
+        <@foreach(Session::get('result')[0] as $track)
+            <td>{{$track->name}}</td>
+            <td>{{$track->artist}}</td>
+        @endforeach 
+    </tr>      
+    <tr class="success">
+        <@foreach(Session::get('result')[1] as $artist)
+            <td>{{$track->name}}</td>
+            <td>{{$track->artist}}</td>
+        @endforeach
+    </tr>
+@endif

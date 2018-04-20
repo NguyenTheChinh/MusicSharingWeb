@@ -12,7 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
     <title>@yield('title')</title>
-    @yield('styles')
+    @yield('styles')     
 </head>
 <body>
     @include('particals.header');
