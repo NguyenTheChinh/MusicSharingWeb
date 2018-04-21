@@ -431,10 +431,10 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 /*CSS for search form*/
 
 /* Style the search field */
-form.searchForm{
+/* .navbar-right form.searchForm{
     display: none;
 }
-form.searchForm input[type=text] {
+.navbar-right form.searchForm input[type=text] {
     font-size: 17px;
     border: 1px solid grey;
     float: left;
@@ -442,25 +442,24 @@ form.searchForm input[type=text] {
     background: #f1f1f1;
 }
   
-  /* Style the submit button */
-form.searchForm button {
+
+.navbar-right form.searchForm button {
     float: left;
     width: 20%;
     background: #2196F3;
     color: white;
     font-size: 17px;
     border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border-left: none; 
     cursor: pointer;
   }
   
-form.searchForm button:hover {
+.navbar-right form.searchForm button:hover {
     background: #0b7dda;
   }
-  
-  /* Clear floats */
-form.searchForm::after {
+
+.navbar-right form.searchForm::after {
     content: "";
     clear: both;
     display: table;
-}
+} */
