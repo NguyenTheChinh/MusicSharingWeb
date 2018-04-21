@@ -37,17 +37,22 @@
                                     @endauth
                             @endif
                         </li>
-                        <li><a href="" id="searchIconNavbar"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="javascript:void(0)" id="searchIconNavbar"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <form class="searchForm" action="">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- The form -->
 </div>
 
 <script>
     $(document).ready(function(){
         $("#searchIconNavbar").click(function(){
-            $(".searchForm").css("display","none");
+            $(".searchForm").toggle();
         });
     });
 </script>  
