@@ -115,7 +115,9 @@ h3, h4 {
     background-color: red !important;
 }
 /*CSS for search form*/
-
+.searchForm button:hover{
+    background: rgb(78, 147, 226);
+}
 
 
 /*CSS for footer*/

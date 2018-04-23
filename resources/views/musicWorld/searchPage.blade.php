@@ -5,17 +5,17 @@
         <div class="row">
             <div class="col-md-8 col-md-push-4 searchForm">
                 <form class="form-inline" action="/search" method="post">    
-                    <input type="text" placeholder="seaech song, artist, playlist......" name="search" class="form-control">
+                    <input type="text" placeholder="search song, artist, playlist......" name="search" class="form-control">
                     <a href="#"><button class="btn btn-primary">Search</button></a> 
                 </form>
             </div>
         </div>
 
-         <h3 class="text-center">YOUR RESULT SEARCH </h3>
+        <h3>YOUR RESULT SEARCH </h3>
         <div class="listHotSong">
             @if(Session::has('result'))
             <ul class="list-group">
-            <@foreach(Session::get('result')[0] as $track)
+            @foreach(Session::get('result')[0] as $track)
                 <li class="list-group-item">
                     <div class="media">
                         <div class="media-left">
@@ -34,7 +34,7 @@
                     </div>
                 </li>
             @endforeach
-            <@foreach(Session::get('result')[1] as $artist)
+            @foreach(Session::get('result')[1] as $artist)
                 <li class="list-group-item">
                     <div class="media">
                         <div class="media-left">
