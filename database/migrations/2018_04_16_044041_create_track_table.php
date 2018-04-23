@@ -20,10 +20,9 @@ class CreateTrackTable extends Migration
             $table->string('artist');
             $table->dateTime('date');
             $table->float('price');
-            $table->integer('fulltrack_time');
             $table->integer('genre_id');
             $table->integer('uploaded_by');
-            $table->integer('listen')->default(0);
+            $table->integer('listen');
         });
     }
 
