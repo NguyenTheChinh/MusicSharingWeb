@@ -111,7 +111,7 @@
                             <div class="media-body">
                                 <div>
                                     <p class="media-heading"><a href="/musicworld/listen/{{$dit->name}}-{{$dit->id}}.mp3">{{$dit->name}}</a></p>
-                                    <p>{{$dit->album}}</p>
+                                    <p>Album : {{$dit->album}}, Lượt nghe : {{$dit->listen}}</p>
                                 </div>
                                 <div>
                                     <p>price : {{$dit->price}}</p>
