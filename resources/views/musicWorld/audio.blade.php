@@ -1,9 +1,14 @@
 @extends('layouts.master');
 
+@section('styles')
+    <script src="/js/audio.js"></script>
+@endsection
+
 @section('content')
 <div class="container-audio">
-    <audio controls autoplay loop>
+    <audio controls="controls" autoplay id = "audioArea">
         <source src="/upload/{{$nameSong}}-{{$idSong}}" type="audio/ogg">
+        <source src="/upload/{{$nameSong}}-{{$idSong}}" type="audio/mpeg">
         Your browser dose not Support the audio Tag
     </audio>
 </div>
