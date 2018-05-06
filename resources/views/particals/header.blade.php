@@ -24,36 +24,13 @@
                         <li><a href="">ADMIN</a></li>
                         <li class="dropdown">
                             @if (Route::has('login'))
-                                    @auth
-                                        <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-=======
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Music world</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    @if (Route::has('login'))
-                        @auth
-                            {!! \Illuminate\Support\Facades\Auth::user()->level == 1 ? '<li><a href="/admin"">ADMIN</a></li>' : "" !!}
-                        @endauth
-                    @endif
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="" data-toggle="modal" data-target="#myModalCreatePlaylist">CREATE PLAYLIST</a></li>
-                    <li><a href="/upload">UPLOAD YOUR SONG</a></li>
-                    <li class="dropdown">
-                        @if (Route::has('login'))
-                            @auth
+                                @auth
+                                    {!! \Illuminate\Support\Facades\Auth::user()->level == 1 ? '<li><a href="/admin"">ADMIN</a></li>' : "" !!}
+                                @endauth
+                            @endif;
+                        
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
->>>>>>> cc05fba2973d7efa20f1b87cb6a9edf6d695e0f2
                                         document.getElementById('logout-form').submit();">
                                     LOGOUT
                                 </a>
