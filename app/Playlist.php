@@ -8,7 +8,7 @@ class Playlist extends Model
 {
     protected $table = "playlist";
     protected $fillable = ['name', 'user_id'];
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function ListTrack()
     {
