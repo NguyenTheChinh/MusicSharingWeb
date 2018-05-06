@@ -35,6 +35,10 @@ Route::post('upload', 'TrackController@uploadFile') -> name('upload');
 
 Route::get('download/{name}-{id}', 'TrackController@downloadFile')->middleware('auth');
 
+Route::post('/payment', 'TrackController@paid')->middleware('auth');
+
+Route::put('/payment', 'TrackController@payment')->middleware('auth');
+
 Route::get('admin', 'AdminController@getView');
 
 Route::get('admin/user/', 'AdminController@getUserView');
