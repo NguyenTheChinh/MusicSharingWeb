@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Playlist as PlaylistModel;
 
 use App\ListTrack as ListTrackModel;
-
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class PlaylistController extends Controller
@@ -24,16 +24,18 @@ class PlaylistController extends Controller
 
 
     public function get (Request $request) {
-        return PlaylistModel::all();
+        $playlist = \DB::table('playlist')->get();
+        return view('musicWorld.playlist',['playlist'=>  $playlist]);
     }
 
 
     public function create(Request $request)
     {
-        $name = $request->input('name');
+        $name = $request->input('namePlaylist');
 
         $playlist =  new PlaylistModel();
         $playlist->name = $name;
+        $playlist->user_id=Auth::user()->id;
         $playlist->save();
         return $playlist;
     }

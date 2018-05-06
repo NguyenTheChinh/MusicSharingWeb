@@ -19,7 +19,7 @@ Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
 
 Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
 
-Route::get('/playlist', 'PlaylistController@get')->name('playlist');
+Route::get('/getPlaylist', 'PlaylistController@get')->name('playlist');
 
 Route::post('/playlist', 'PlaylistController@create')->name('playlist');
 
@@ -62,3 +62,7 @@ Route::get('search', function(){
 });
 
 Route::post('search', 'controllerSearch@search');
+
+Route::get('createPlaylist', function(){
+    return view('musicWorld.createPlaylist');   
+});

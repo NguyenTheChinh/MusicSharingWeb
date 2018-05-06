@@ -12,9 +12,15 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">HOME</a></li>
-                        <li><a href="" data-toggle="modal" data-target="#myModalCreatePlaylist">CREATE PLAYLIST</a></li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">PLAYLIST <span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="position : absolute; left : -1px; width : 190px">
+                                <li><a href="/createPlaylist">Create Playlist</a></li>
+                                <li><a href="/getPlaylist">Your Playlist</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/upload">UPLOAD YOUR SONG</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="">ADMIN</a></li>
                         <li class="dropdown">
                             @if (Route::has('login'))
                                     @auth
