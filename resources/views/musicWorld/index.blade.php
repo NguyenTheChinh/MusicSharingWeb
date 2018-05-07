@@ -116,6 +116,7 @@
                                 <div>
                                     <p>price : {{$dit->price}}</p>
                                     <a href="download/{{$dit->name}}-{{$dit->id}}"> <span><i class="fas fa-download"></i></span></a>
+                                    <a href="" title="add to your playlist" data-toggle="modal" data-target="#modal"> <span><i class="fas fa-plus"></i></span></a>
                                 </div>
                             </div>
                         </div>
