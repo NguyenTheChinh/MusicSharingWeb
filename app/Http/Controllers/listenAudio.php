@@ -12,6 +12,7 @@ class listenAudio extends Controller
         $track->save();
         $genre=$track->genre_id;
         $releatedSong = Track::where('genre_id', '=', $genre)->get();
-        return view('musicWorld.audio',['nameSong'=>$nameSong,'idSong'=>$idSong,'releatedSong'=>$releatedSong]);
+        $playlist = \DB::table('playlist')->get();
+        return view('musicWorld.audio',['nameSong'=>$nameSong,'idSong'=>$idSong,'releatedSong'=>$releatedSong,'playlist'=>$playlist]);
     }
 }

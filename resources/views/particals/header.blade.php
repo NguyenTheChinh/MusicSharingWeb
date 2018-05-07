@@ -1,5 +1,4 @@
 <div class="musicSharingHeading">
-<<<<<<< HEAD
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -12,7 +11,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">HOME</a></li>
+                       <li><a href="/">HOME</a></li>
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown">PLAYLIST <span class="caret"></span></a>
                             <ul class="dropdown-menu" style="position : absolute; left : -1px; width : 190px">
@@ -24,13 +23,9 @@
                         <li><a href="">ADMIN</a></li>
                         <li class="dropdown">
                             @if (Route::has('login'))
-                                @auth
-                                    {!! \Illuminate\Support\Facades\Auth::user()->level == 1 ? '<li><a href="/admin"">ADMIN</a></li>' : "" !!}
-                                @endauth
-                            @endif;
-                        
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                                    @auth
+                                        <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                                         document.getElementById('logout-form').submit();">
                                     LOGOUT
                                 </a>

@@ -21,13 +21,20 @@ Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
 
 Route::get('/getPlaylist', 'PlaylistController@get')->name('playlist');
 
-Route::post('/playlist', 'PlaylistController@create')->name('playlist');
+Route::post('/createPlaylist', 'PlaylistController@create')->name('playlist');
 
-Route::delete('/playlist/{id}', 'PlaylistController@delete')->name('playlist');
+Route::delete('/getPlaylist', 'PlaylistController@delete')->name('playlist');
 
-Route::post('list_track/{playlist_id}/track_id/{track_id}/', 'PlaylistController@insertTracktoList')->name('listtrack');
+Route::get('/deletePlaylist-{id}','PlaylistController@delete');
+
+
+Route::post('insert', 'PlaylistController@insertTracktoList')->name('listtrack');
+
+Route::get('/getTrackInList-{playlistId}','PlaylistController@getTracktoList');
 
 Route::delete('list_track/{playlist_id}/track_id/{track_id}/delete', 'PlaylistController@deleteTrackfromList')->name('listtrack');
+
+Route::get('deleteTrackInPlaylist/{track_id}-{playlist_id}','PlaylistController@deleteTrackfromList');
 
 Route::get('upload', 'TrackController@getUploadForm')->middleware('auth');
 

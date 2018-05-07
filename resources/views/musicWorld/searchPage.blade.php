@@ -29,6 +29,7 @@
                             <div>
                                 <p>price : {{$track->price}}</p>
                                 <a href="/download/{{$track->name}}-{{$track->id}}"> <span><i class="fas fa-download"></i></span></a>
+        
                             </div>
                         </div>
                     </div>

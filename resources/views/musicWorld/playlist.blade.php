@@ -16,11 +16,12 @@
                             </div>
                             <div class="media-body">
                                 <div>
-                                    <p class="media-heading"><a href="">{{$pl->name}}</a></p>
+                                    <p class="media-heading"><a href="/getTrackInList-{{$pl->id}}">{{$pl->name}}</a></p>
                                     <p>Date : {{$pl->updated_at}}</p>
                                 </div>
                                 <div>
-                                    <a href="/playlist/{{$pl->id}}"> <span><i class="fas fa-trash-alt"></i></span></a>
+
+                                    <a href="deletePlaylist-{{$pl->id}}"> <span><i class="fas fa-trash-alt" onclick="notificationSuccessfully()"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -28,7 +29,13 @@
                 @endforeach
                 </ul>
             </div>
+            <script>
+                function notificationSuccessfully(){
+                    alert("Successfully!");
+                }
+            </script>
     </div>
-
+    </div>
+    </div>
 
 @endsection

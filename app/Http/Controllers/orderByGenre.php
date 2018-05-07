@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use app\Track;
+use app\ListTrack;
+use app\Playlist;
 use Illuminate\Http\Request;
 
 class orderByGenre extends Controller
@@ -13,7 +15,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+            $playlist = \DB::table('playlist')->get();
+            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);
         }
         if($nameGenre==="ratingHouse"){
             $ratingSong= \DB::table('track')
@@ -21,7 +24,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+                $playlist = \DB::table('playlist')->get();
+                return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);
         }
         if($nameGenre==="ratingDubstep"){
             $ratingSong=\DB::table('track')
@@ -29,7 +33,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+                $playlist = \DB::table('playlist')->get();
+                return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);
         }
         if($nameGenre==="ratingTrap"){
             $ratingSong= \DB::table('track')
@@ -37,7 +42,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+                $playlist = \DB::table('playlist')->get();
+                return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);
         }
         if($nameGenre==="ratingDrumBass"){
             $ratingSong= \DB::table('track')
@@ -45,7 +51,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+                $playlist = \DB::table('playlist')->get();
+                return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
         }
         if($nameGenre==="ratingTrance"){
             $ratingSong= \DB::table('track')
@@ -53,7 +60,8 @@ class orderByGenre extends Controller
                 ->orderBy('listen', 'desc')
                 ->limit(10)
                 ->get();
-            return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong]);
+                $playlist = \DB::table('playlist')->get();
+                return view('musicWorld.ratingSongGenre',['ratingSong'=> $ratingSong],['playlist'=> $playlist]);
         }
     }
 }
