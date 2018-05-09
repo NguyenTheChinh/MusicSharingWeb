@@ -19,6 +19,8 @@ Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
 
 Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
 
+Route::post('musicworld/listen/{nameSong}-{idSong}','listenAudio@comments');
+
 Route::get('/playlist', 'PlaylistController@get')->name('playlist');
 
 Route::post('/playlist', 'PlaylistController@create')->name('playlist');
