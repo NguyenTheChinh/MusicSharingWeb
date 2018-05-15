@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use app\Track;
+use app\Playlist;
 class songInTrack extends Controller
 {
     public function getIndex(){
@@ -11,6 +12,7 @@ class songInTrack extends Controller
             ->orderBy('listen', 'desc')
             ->limit(10)
             ->get();
-        return view('musicWorld.index',['dataInTrack'=> $dataInTrack]);
+        $playlist = \DB::table('playlist')->get();
+        return view('musicWorld.index',['dataInTrack'=> $dataInTrack],['playlist'=> $playlist]);
     }
 }

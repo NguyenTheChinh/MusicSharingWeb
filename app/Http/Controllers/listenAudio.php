@@ -18,7 +18,7 @@ class listenAudio extends Controller
         $track->listen=$track->listen;
         $track->save();
         $genre=$track->genre_id;
-        $releatedSong = Track::where('genre_id', '=', $genre)->get();
+        $releatedSong = Track::where('genre_id', '=', $genre)->get();  
         $id_track=$idSong;
         //$comments=Comment::where('id_track','=',$track->id)->get();
         

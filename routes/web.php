@@ -19,25 +19,39 @@ Route::get('/musicworld/{nameGenre}','orderByGenre@getIndex');
 
 Route::get('musicworld/listen/{nameSong}-{idSong}','listenAudio@getIndex');
 
+
 //Route::post('/musicworld/listen/{nameSong}-{idSong}','listenAudio@showcomment');
 
 Route::post('musicworld/listen/{nameSong}-{idSong}','listenAudio@comment');
 
 Route::get('/playlist', 'PlaylistController@get')->name('playlist');
 
-Route::post('/playlist', 'PlaylistController@create')->name('playlist');
+Route::get('/getPlaylist', 'PlaylistController@get')->name('playlist');
 
-Route::delete('/playlist/{id}', 'PlaylistController@delete')->name('playlist');
+Route::post('/createPlaylist', 'PlaylistController@create')->name('playlist');
 
-Route::post('list_track/{playlist_id}/track_id/{track_id}/', 'PlaylistController@insertTracktoList')->name('listtrack');
+Route::delete('/getPlaylist', 'PlaylistController@delete')->name('playlist');
+
+Route::get('/deletePlaylist-{id}','PlaylistController@delete');
+
+
+Route::post('insert', 'PlaylistController@insertTracktoList')->name('listtrack');
+
+Route::get('/getTrackInList-{playlistId}','PlaylistController@getTracktoList');
 
 Route::delete('list_track/{playlist_id}/track_id/{track_id}/delete', 'PlaylistController@deleteTrackfromList')->name('listtrack');
+
+Route::get('deleteTrackInPlaylist/{track_id}-{playlist_id}','PlaylistController@deleteTrackfromList');
 
 Route::get('upload', 'TrackController@getUploadForm')->middleware('auth');
 
 Route::post('upload', 'TrackController@uploadFile') -> name('upload');
 
 Route::get('download/{name}-{id}', 'TrackController@downloadFile')->middleware('auth');
+
+Route::post('/payment', 'TrackController@paid')->middleware('auth');
+
+Route::put('/payment', 'TrackController@payment')->middleware('auth');
 
 Route::get('admin', 'AdminController@getView');
 
@@ -66,3 +80,7 @@ Route::get('search', function(){
 });
 
 Route::post('search', 'controllerSearch@search');
+
+Route::get('createPlaylist', function(){
+    return view('musicWorld.createPlaylist');   
+});

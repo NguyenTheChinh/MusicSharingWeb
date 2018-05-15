@@ -8,6 +8,7 @@ use App\TrackBought;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function PHPSTORM_META\elementType;
 
 class TrackController extends Controller
 {
@@ -49,7 +50,7 @@ class TrackController extends Controller
         $is_bought = TrackBought::where([['user_id', '=', $user->id], ['track_id', '=', $id]])->get();
         if (count($is_bought) == 0) {
             if ($user->wallet < $track->price) {
-                return ;
+                return;
             }
             $user->wallet = $user->wallet - $track->price;
             $user->save();
@@ -58,9 +59,33 @@ class TrackController extends Controller
                 'track_id' => $id
             ]);
         }
-        $file = public_path('/upload/'.$name.'-'.$id.'.mp3');
+        $file = public_path('/upload/' . $name . '-' . $id . '.mp3');
         $headers = ['Content-Type: audio/mpeg'];
         $nameFile = $name . "-" . $track->artist;
         return response()->download($file, $nameFile, $headers);
+    }
+
+    public function payment(Request $request)
+    {
+        $id = (int)$request->id;
+        $time = (int)$request->time;
+        $duration = (int)$request->duration;
+        $track = Track::find($id);
+        $user = Auth::user();
+        $is_bought = TrackBought::where([['user_id', '=', $user->id], ['track_id', '=', $id]])->get();
+        if (count($is_bought) == 0) {
+            $user->wallet -= $track->price * $time / $duration;
+            $user->save();
+        } else {
+            return response()->json(['is_bought' => true]);
+        }
+    }
+
+    public function paid(Request $request)
+    {
+        TrackBought::create([
+            'user_id' => Auth::user()->id,
+            'track_id' => (int)$request->id
+        ]);
     }
 }
