@@ -39,54 +39,51 @@
     </div>
 
 <div class="container"> 
-<h3>COMMENT </h3>
+<h3>Leave a comment </h3>
 
 <div class="col-md-8 col-md-push-4 searchForm">
     <p> {{ Auth::user()->username }} </p>
 
-<form class="form-inline" action="/musicworld/listen/{{nameSong}}-{{idSong}}" method="post">
+<form class="form-inline" action='' method="POST">
+
+{{ csrf_field() }}
+
     <input type="text" placeholder="Share your thought..." name="comment" class="form-control">
-    <input type="hidden" name="idSong" value='{{$idSong}}'> </form>
+    <input type="hidden" name="idSong" value='{{$idSong}}'>
 
- <a href="/musicworld/listen/{{nameSong}}-{{idSong}}"> 
+    <input type="submit" name="" value ="Comment"> 
 
-    <button class="btn btn-primary">
-    Comment
-    </button>
+    </form>
 </a>
+
 
 </div>
 </div>
 
 <div class="container">
-<h3>Comments</h3>
-<div class="listHotSong">
-    <ul class="list-group">
-    @foreach($comments as $comment)
-        <li class="list-group-item">
+<h4>Comments</h4>
+
+   <div>
+    @foreach ($data as $comments) 
+     <li class="list-group-item">
             <div class="media">
                 <div class="media-left">
-                    <h4 class="text-center"></h4>
                 </div>
-                <div class="media-body">
-                    <div>
-                        <p class="media-heading"></p>
-                        <p>{{$comment->content}}</p>
-
-                    </div>
-                    <div>
-                        <a href=""> <span><i class="fas fa-download"></i></span></a>
-                    </div>
-                </div>
-            </div>
-        </li>
-    @endforeach
-    </ul>
-    </div>
+     <div class="media-body">
+       
+                         {{ $comments->username }} <br>
+                         {{ $comments->content }} 
+    
+     </div>
+ </div> </li>
+                   
+    @endforeach 
+</div>
+  
 </div>
 
 
-</div>
+
 
 
 
